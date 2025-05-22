@@ -1,19 +1,19 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1747951994
+::res://::1747952878
 icon.svg::CompressedTexture2D/CompressedTexture2D::3398701673802537084::1747951908::1747951994::1::::<><><>0<>0<>5bd78ccf81c8226b12f716496a9d03e9<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 ::res://assets/::1747951908
 ::res://assets/character/::1747951908
-::res://assets/character/Hana Caraka - Base Character [sample]/::1747951908
+::res://assets/character/Hana Caraka - Base Character [sample]/::1747951995
 color palette.png::CompressedTexture2D/CompressedTexture2D::103986559387642354::1747951908::1747951994::1::::<><><>0<>0<>a2e22f1c3d7c7aad8fdb3f11c45c4b84<>res://.godot/imported/color palette.png-304be87f92e4b8326cd1a6aa5b97fb58.ctex::
 death.png::CompressedTexture2D/CompressedTexture2D::7404173029735645068::1747951908::1747951994::1::::<><><>0<>0<>39f36b0de7185186e12a2532af74b541<>res://.godot/imported/death.png-f1394f14dd7bc36b038d124b0f74c33a.ctex::
 hurt.png::CompressedTexture2D/CompressedTexture2D::2026664606819234374::1747951908::1747951994::1::::<><><>0<>0<>7357ad6a124567bab928394dfdcad0b8<>res://.godot/imported/hurt.png-75b6bb38e1e76e4758a8b5c65ae7583d.ctex::
 idle.png::CompressedTexture2D/CompressedTexture2D::2735947503613006262::1747951908::1747951994::1::::<><><>0<>0<>ca387e25cf00d045eb9e3f8b8dc89e0f<>res://.godot/imported/idle.png-2ddd640ed255af13babb18b297cbd22c.ctex::
 jump.png::CompressedTexture2D/CompressedTexture2D::7523926940937778731::1747951908::1747951994::1::::<><><>0<>0<>db3fdc07c1e146963b76a5ae2f434dec<>res://.godot/imported/jump.png-0ebeaf8ca053f4e8d0899edf07393a2a.ctex::
-Read Me.txt::TextFile::-1::1747951908::0::1::::<><><>0<>0<><>::
+Read Me.txt::TextFile/TextFile::-1::1747951908::0::1::::<><><>0<>0<><>::
 run.png::CompressedTexture2D/CompressedTexture2D::6669275604326550254::1747951908::1747951994::1::::<><><>0<>0<>6af059228385aa8020a056da6f5aa9ef<>res://.godot/imported/run.png-b7b23e4568f5b1c634625dadbc3012e1.ctex::
 walk.png::CompressedTexture2D/CompressedTexture2D::4741130330615305552::1747951908::1747951994::1::::<><><>0<>0<>3d6d139956b836d8d22a88549691bce3<>res://.godot/imported/walk.png-6ec8036568bd31c66a85857cc8bcbe91.ctex::
-::res://assets/terrain/::1747951908
+::res://assets/terrain/::1747951994
 8x8tiles.png::CompressedTexture2D/CompressedTexture2D::8297385906716509030::1747951908::1747951994::1::::<><><>0<>0<>d5ada9dee10c6263f88b0f3779616887<>res://.godot/imported/8x8tiles.png-86a93ab22a5c94f185ddd975ad0d2312.ctex::
-::res://scenes/::1747951908
-character_body_2d.gd::GDScript::6791618376441295008::1747951908::0::1::::<>CharacterBody2D<><>0<>0<><>::
-test_scene.tscn::PackedScene::6273831313641541661::1747951908::0::1::::<><><>0<>0<><>::uid://dqhky7chkq38u::::res://assets/terrain/8x8tiles.png<>uid://c3057yr4ii1eq::::res://scenes/character_body_2d.gd<>uid://boomecy6au781::::res://icon.svg
+::res://scenes/::1747952718
+character_body_2d.gd::GDScript::6791618376441295008::1747952139::0::1::::<>CharacterBody2D<><>0<>0<><>::
+test_scene.tscn::PackedScene::6273831313641541661::1747952718::0::1::::<><><>0<>0<><>::uid://dqhky7chkq38u::::res://assets/terrain/8x8tiles.png<>uid://c3057yr4ii1eq::::res://scenes/character_body_2d.gd<>uid://boomecy6au781::::res://icon.svg

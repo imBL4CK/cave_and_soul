@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dqhky7chkq38u" path="res://assets/terrain/8x8tiles.png" id="1_g7g4h"]
 [ext_resource type="Script" uid="uid://c3057yr4ii1eq" path="res://scenes/character_body_2d.gd" id="2_nd71p"]
-[ext_resource type="Texture2D" uid="uid://boomecy6au781" path="res://icon.svg" id="3_7ddre"]
+[ext_resource type="Texture2D" uid="uid://be8kwj6723xw5" path="res://assets/character/Hana Caraka - Base Character [sample]/idle.png" id="3_nd71p"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j8ivh"]
 texture = ExtResource("1_g7g4h")
@@ -402,12 +402,15 @@ tile_map_data = PackedByteArray("AAAVAAcAAgABAAEAAAAVAAYAAgABAAEAAAAVAAUAAgABAAE
 tile_set = SubResource("TileSet_nd71p")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(0, 10)
 script = ExtResource("2_nd71p")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
 position = Vector2(35, -33)
-scale = Vector2(0.1875, 0.171875)
-texture = ExtResource("3_7ddre")
+scale = Vector2(1, 0.916)
+texture = ExtResource("3_nd71p")
+hframes = 4
+vframes = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 position = Vector2(35, -33)
