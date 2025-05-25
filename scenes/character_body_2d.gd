@@ -1,25 +1,61 @@
 extends CharacterBody2D
+# Importa o node de sprite do player
+@onready var animated_sprite_2d = $player_sprite
 
+const GRAVITY = 1000
+const SPEED = 140
+const JUMP = -300
+const JUMP_HORIZONTAL = 100
 
-const SPEED = 150.0
-const JUMP_VELOCITY = -400.0
+enum State { Idle, Run, Jump }
 
+var current_state
 
-func _physics_process(delta: float) -> void:
-	# Add the gravity.
-	if not is_on_floor():
-		velocity += get_gravity() * delta
+func _ready():
+	current_state = State.Idle
 
-	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+func _physics_process(delta):
+	player_falling(delta)
+	player_idle(delta)
+	player_run(delta)
+	player_jump(delta)
+	player_animations()
+	move_and_slide()
 
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction := Input.get_axis("ui_left", "ui_right")
+func player_falling(delta):
+	if !is_on_floor():
+		velocity.y += GRAVITY * delta
+
+func player_idle(delta):
+	if is_on_floor():
+		current_state = State.Idle
+		print("State:", State.keys()[current_state])
+
+func player_run(delta):
+	var direction = Input.get_axis("move_left", "move_right")
+	
 	if direction:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+	if direction != 0:
+		current_state = State.Run
+		print("State:", State.keys()[current_state])
+		animated_sprite_2d.flip_h = false if direction > 0 else true
 
-	move_and_slide()
+func player_jump(delta):
+	if is_on_floor() and Input.is_action_just_pressed("jump"):
+		velocity.y = JUMP
+		current_state = State.Jump
+		
+	if !is_on_floor() and current_state == State.Jump:
+		var direction = Input.get_axis("move_left", "move_right")
+		velocity.x += direction * JUMP_HORIZONTAL * delta
+		
+func player_animations():
+	if current_state == State.Idle:
+		animated_sprite_2d.play("idle")
+	elif current_state == State.Run:
+		animated_sprite_2d.play("run")
+	elif current_state == State.Jump:
+		animated_sprite_2d.play("jump")
