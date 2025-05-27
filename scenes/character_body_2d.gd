@@ -13,6 +13,7 @@ enum State { Idle, Run, Jump }
 
 var current_state
 var current_jump_count: int
+var vida = 3
 
 func _ready():
 	current_state = State.Idle

@@ -20,6 +20,10 @@ config/icon="res://icon.svg"
 window/size/viewport_width=1080
 window/size/viewport_height=720
 
+[global_group]
+
+enemy=""
+
 [input]
 
 move_left={
@@ -45,6 +49,7 @@ jump={
 [layer_names]
 
 2d_physics/layer_2="PLAYER"
+2d_physics/layer_3="enemy"
 
 [rendering]
 
