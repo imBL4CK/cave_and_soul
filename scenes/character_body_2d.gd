@@ -2,6 +2,8 @@ extends CharacterBody2D
 # Importa o node de sprite do player
 @onready var animated_sprite_2d = $player_sprite
 
+@export var jump_count: int = 2 
+
 const GRAVITY = 1000
 const SPEED = 140
 const JUMP = -300
@@ -10,6 +12,7 @@ const JUMP_HORIZONTAL = 100
 enum State { Idle, Run, Jump }
 
 var current_state
+var current_jump_count: int
 
 func _ready():
 	current_state = State.Idle
@@ -44,8 +47,18 @@ func player_run(delta):
 		animated_sprite_2d.flip_h = false if direction > 0 else true
 
 func player_jump(delta):
-	if is_on_floor() and Input.is_action_just_pressed("jump"):
+	
+	var jump_input: bool = Input.is_action_just_pressed("jump")
+	
+	if is_on_floor() and jump_input:
+		current_jump_count = 0
 		velocity.y = JUMP
+		current_jump_count += 1
+		current_state = State.Jump
+		
+	if !is_on_floor() and jump_input and current_jump_count < jump_count:
+		velocity.y = JUMP
+		current_jump_count += 1
 		current_state = State.Jump
 		
 	if !is_on_floor() and current_state == State.Jump:
