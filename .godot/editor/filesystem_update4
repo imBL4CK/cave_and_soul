@@ -1,2 +1,3 @@
 res://scenes/test_scene.tscn
 res://scenes/enemy.gd
+res://scenes/character_body_2d.gd

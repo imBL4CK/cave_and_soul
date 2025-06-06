@@ -17,7 +17,8 @@ var vida = 3
 
 func _ready():
 	current_state = State.Idle
-
+	add_to_group("player")
+	
 func _physics_process(delta):
 	player_falling(delta)
 	player_idle(delta)
