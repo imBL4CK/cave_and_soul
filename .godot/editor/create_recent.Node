@@ -1,5 +1,10 @@
-Marker2D
+Label
+TextureRect
+Panel
+GridContainer
+Control
 Node2D
+Marker2D
 CharacterBody2D
 CollisionShape2D
 Area2D
@@ -7,4 +12,3 @@ Timer
 AnimatedSprite2D
 Camera2D
 Sprite2D
-TileMapLayer

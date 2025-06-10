@@ -1,3 +1,5 @@
 res://scenes/test_scene.tscn
-res://scenes/enemy.gd
+res://craft.gd
+res://scenes/inventory_ui.gd
+res://ItemSlot.tscn
 res://scenes/character_body_2d.gd

@@ -32,6 +32,7 @@ func player_falling(delta):
 		velocity.y += GRAVITY * delta
 
 func player_idle(delta):
+	pass
 	if is_on_floor():
 		current_state = State.Idle
 		print("State:", State.keys()[current_state])

@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=4 uid="uid://cvndc5nprokrt"]
+[gd_scene load_steps=51 format=4 uid="uid://cvndc5nprokrt"]
 
 [ext_resource type="Texture2D" uid="uid://dqhky7chkq38u" path="res://assets/terrain/8x8tiles.png" id="1_g7g4h"]
 [ext_resource type="Script" uid="uid://c3057yr4ii1eq" path="res://scenes/character_body_2d.gd" id="2_nd71p"]
@@ -6,6 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://c2av83aajro6a" path="res://assets/character/Hana Caraka - Base Character [sample]/run.png" id="4_7ddre"]
 [ext_resource type="Texture2D" uid="uid://dfgv8h6884bvf" path="res://assets/character/Hana Caraka - Base Character [sample]/jump.png" id="4_qjeyg"]
 [ext_resource type="Script" uid="uid://dtxrwvkmaro" path="res://scenes/enemy.gd" id="6_3qnke"]
+[ext_resource type="Script" uid="uid://cwb5tx4b0t6o4" path="res://scenes/inventory_ui.gd" id="7_rnaij"]
+[ext_resource type="PackedScene" uid="uid://cwny5hix10n5k" path="res://ItemSlot.tscn" id="8_h3xc6"]
+[ext_resource type="Texture2D" uid="uid://c5k5hcxqprepq" path="res://inventory.png" id="8_s36qc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j8ivh"]
 texture = ExtResource("1_g7g4h")
@@ -753,5 +756,34 @@ position = Vector2(-110, 0)
 
 [node name="enemy_point_2" type="Marker2D" parent="Enemy/enemy_patrol"]
 position = Vector2(-8, 0)
+
+[node name="InventoryUI" type="Node2D" parent="."]
+position = Vector2(72, -47)
+script = ExtResource("7_rnaij")
+
+[node name="Control" type="Control" parent="InventoryUI"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="InventoryUI/Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("8_s36qc")
+expand_mode = 1
+
+[node name="GridContainer" type="GridContainer" parent="InventoryUI/Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+columns = 4
+
+[node name="TextureRect" parent="InventoryUI/Control/GridContainer" instance=ExtResource("8_h3xc6")]
+layout_mode = 2
+
+[node name="TextureRect2" parent="InventoryUI/Control/GridContainer" instance=ExtResource("8_h3xc6")]
+layout_mode = 2
 
 [connection signal="body_entered" from="Player/player_damage_area" to="Player" method="_on_player_damage_area_body_entered"]
