@@ -7,7 +7,7 @@ extends CharacterBody2D
 const GRAVITY = 1000
 const SPEED = 140
 const JUMP = -300
-const JUMP_HORIZONTAL = 100
+const JUMP_HORIZONTAL = 70
 
 enum State { Idle, Run, Jump }
 
@@ -60,6 +60,7 @@ func player_jump(delta):
 		current_state = State.Jump
 		
 	if !is_on_floor() and jump_input and current_jump_count < jump_count:
+		current_jump_count = 1
 		velocity.y = JUMP
 		current_jump_count += 1
 		current_state = State.Jump
